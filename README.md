@@ -16,6 +16,7 @@ A interação entre essas duas máquinas virtuais terá como principal finalidad
 <a href="https://ibb.co/C512HrwR"><img src="https://i.ibb.co/6RnBWdyj/Active-Directory-Lab.jpg" alt="Active-Directory-Lab" border="0"></a>
 
 # Passo a passo
+<b>Criando o DC(Domain Control)</b>
 
 1) Vamos iniciar esse laboratório instalando na nossa máquina doméstica o VirtualBox.
 2) Depois de instalado o VirtualBox, podemos baixar a imagem ISO do Windows Server 2019, será a nossa primeira máquina virtual que iremos configurar.
@@ -39,7 +40,17 @@ A interação entre essas duas máquinas virtuais terá como principal finalidad
    - Clique em uma das duas redes, clique com o botão direito Status e depois em Detalhes, se o endereço IP estiver 10.0.2.15, ou algo similar, essa será a internet host do nosso laboratório, então iremos renomear para "Internet".
    - Faça o mesmo processo para a outra rede, porém irá perceber que o endereço IP é diferente, algo parecido como 164.254.136.74. Isso se deve ao fato que este adaptador de rede procurou algum servidor DHCP para obter um IP e não achou em lugar algum. Essa rede renomearemos como "Internal"
  
- <a href="https://ibb.co/gcfY6Ct"><img src="https://i.ibb.co/sXN7trs/ws2019-3.jpg" alt="ws2019-3" border="0"></a>
+  <a href="https://ibb.co/gcfY6Ct"><img src="https://i.ibb.co/sXN7trs/ws2019-3.jpg" alt="ws2019-3" border="0"></a>
+
+8) Com as duas redes renomeadas, clique com o botão direito da rede Internal, vá em Propriedades e clique duas vezes em Internet Protocol Version 4(TCP/IPv4). Entrando nas propriedades do Internet Protocol Version 4, iremos colocar 172.16.0.1 no endereço IP e 255.255.255.0 na máscara de sub-rede. Note que o gateway padrão não será preenchido, pois o próprio controlador de domínio servirá como gateway padrão. Para o servidor DNS, quando instalamos o Active Directory, ele instalou automaticamente o DNS, então este se utilizará como servidor DNS. Para fazer isso, insira seu próprio endereço IP ou use o endereço de loopback 127.0.0.1, que é um endereço genérico que se refere a si mesmo. Sempre que um computador envia um ping para esse endereço, ele está essencialmente enviando um ping para si mesmo automaticamente.
+
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/DgLRh0cG/ws2019-4.jpg" alt="ws2019-4" border="0"></a>
+
+9) Agora vá até o Menu Iniciar, Configurações, Sistema, Sobre e clique em Renomear este PC. Renomearemos como DomainControl para atribuir a nossa máquina Windows Server.
+ 
+ <a href="https://ibb.co/3ycMKyMD"><img src="https://i.ibb.co/bgX2tg2S/ws2019-15.jpg" alt="ws2019-15" border="0"></a>
+
+<b>Instalando o Active Directory no Controlador de Domínio
 
  
      
