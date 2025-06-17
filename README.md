@@ -63,6 +63,38 @@ A interação entre essas duas máquinas virtuais terá como principal finalidad
 4) Selecione "Adicionar uma nova floresta" e escolha um nome de domínio raiz . Para este laboratório, usaremos "mydomain.com" e clicaremos em Avançar.
 
   <a href="https://imgbb.com/"><img src="https://i.ibb.co/C5Y7KXf5/ws2019-6.jpg" alt="ws2019-6" border="0"></a>
+
+<b>Instalação RAS/NAT</b>
+
+1) Configuraremos o roteamento para que os clientes na rede privada possam acessar a Internet por meio do controlador de domínio. A configuração de RAS/NAT(RAS = Servidor de Acesso Remoto e NAT = tradução de endereço de rede) permite que máquinas clientes estejam em uma rede privada virtual ou VPN, mas ainda consigam acessar a Internet por meio do Controlador de Domínio.
+
+   <a href="https://ibb.co/0j47HCpC"><img src="https://i.ibb.co/Kj4PT2c2/ws2019-7.jpg" alt="ws2019-7" border="0"></a>
+
+   <a href="https://ibb.co/MD52jBp2"><img src="https://i.ibb.co/d0JW3m6W/ws2019-8.jpg" alt="ws2019-8" border="0"></a>
+
+<b>Configuração do DHCP no Controlador de Domínio</b>
+
+   <a href="https://ibb.co/tpn6Nndq"><img src="https://i.ibb.co/23RrLRbv/ws2019-9.jpg" alt="ws2019-9" border="0"></a>
+
+1) Iremos configurar o nosso DHCP(Scope 1) conforme o diagrama do laboratório. Note que 172.16.0.1 é o endereço IP do controlador de domínio que tem o NAT configurado.
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/2yPp0hYL/ws2019-10.jpg' border='0' alt='ws2019-10'/></a>
+
+<b>Script PowerShell 1k Users</b>
+
+1) Nesta etapa do processo, iremos utilizar um script PowerShell para adicionar mais de mil usuários no Active Directory, isso agilizará o processo ao invés de adicionar manualmente um a um. Neste link, utilizaremos o Script elaborado por Josh Madakor [Power Shell script for creating users](https://github.com/joshmadakor1/AD_PS)
+
+2) Antes de executar este script, precisamos habilitar a execução de todos os scripts neste servidor, caso contrário, ocorrerá um erro. No PowerShell, digite o comando e pressione Enter : Set-ExecutionPolicy Unrestricted. Selecione "Sim para todos" . 
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/L8SQm2H1/ws2019-11.jpg' border='0' alt='ws2019-11'/></a>
+
+3) Executaremos o Script, irá aparecer uma lista de nomes de usuários que será importado no módulo do Active Directory, depois de pronto, posteriormente podemos separar em grupos como se fosse em uma empresa.
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/fy3vDWqY/ws2019-12.jpg' border='0' alt='ws2019-12'/></a>
+
+   
+
+
  
 
  
