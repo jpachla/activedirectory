@@ -50,7 +50,20 @@ A interação entre essas duas máquinas virtuais terá como principal finalidad
  
  <a href="https://ibb.co/3ycMKyMD"><img src="https://i.ibb.co/bgX2tg2S/ws2019-15.jpg" alt="ws2019-15" border="0"></a>
 
-<b>Instalando o Active Directory no Controlador de Domínio
+<b>Instalando o Active Directory no Controlador de Domínio</b>
+
+1) Após a reinicialização do sistema, decorrente as configurações do usuário, iremos instalar o Active Directory. Primeiramente, iremos acessar o painel do Gerenciador do Servidor, e em seguida clicaremos em "Adicione Funções e Recursos". Vamos avançando até chegar na tabela de funções, marcaremos "Serviços de Domínio do Active Directory" e por fim, clicaremos em "Adicionar Recursos".
+
+   <a href="https://ibb.co/xK8JvwGD"><img src="https://i.ibb.co/6cJghGbm/ws2019-5.jpg" alt="ws2019-5" border="0"></a>
+
+2) Vamos avançando a instalação até a sua conclusão, depois clicaremos em "Fechar".
+
+3) Já de volta no dashboard do Gerenciador do Servidor, observaremos que há um icone de uma bandeira na parte superior com um aviso amarelo. Este aviso significa que o software para serviços de domínio do Active Directory foi instalado, mas o domínio real ainda não foi criado. Esse vai ser o nosso próximo passo: clicaremos no ícone da bandeira e clicaremos em "Promover este servidor a um controlador de domínio".
+
+4) Selecione "Adicionar uma nova floresta" e escolha um nome de domínio raiz . Para este laboratório, usaremos "mydomain.com" e clicaremos em Avançar.
+
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/C5Y7KXf5/ws2019-6.jpg" alt="ws2019-6" border="0"></a>
+ 
 
  
      
