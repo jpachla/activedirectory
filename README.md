@@ -92,6 +92,56 @@ A interação entre essas duas máquinas virtuais terá como principal finalidad
 
    <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/fy3vDWqY/ws2019-12.jpg' border='0' alt='ws2019-12'/></a>
 
+<b>Criando máquina Cliente e instalando Windows 10 ISO</b>
+
+1) Neste processo de criação da máquina virtual cliente, nomearemos como "Client1" e configuraremos conforme a imagem abaixo.
+
+  <a href="https://ibb.co/wh0nCpK0"><img src="https://i.ibb.co/Kx0t7V90/client1.jpg" alt="client1" border="0"></a>
+
+2) As configurações de rede serão diferentes das configurações que fizemos na máquina Windows Server, na máquina Client1 vamos alterar para "Rede Interna", assim ela poderá obter um endereço DHCP do Controlador de Domínio(DomainControl).
+
+   <a href="https://ibb.co/XxdkFXnN"><img src="https://i.ibb.co/60pJDYKV/client1-1.jpg" alt="client1-1" border="0"></a>
+
+3) Após configurado a máquina virtual "Client1", enfim instalaremos a imagem ISO do sistema operacional Windows 10.
+
+4) Finalizado a instalação do Windows 10 da maquina "Client1", a primeira ação que iremos tomar é renomear a nossa máquina. Seguiremos o mesmo caminho quando renomeamos lá atrás a máquina "DomainControl".
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/1RqLpwYF/client1-2.jpg' border='0' alt='client1-2'/></a>
+
+5) Depois de realizado a mudança de nome da máquina, o Windows reinicializa o sistema como procedimento padrão. Nesta tela iremos em "Ingressar em Domínio". Após isso, o sistema perguntará qual nome usar. Como é um usuário local, colocaremos qualquer nome, pode ser o seu ou podemos pegar um nome fictício da lista de usuários que está inclusa no Active Directory.
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/XY8GHZXN/client1-5.png' border='0' alt='client1-5'/></a>
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/9fhcwVh6/client1-4.jpg' border='0' alt='client1-4'/></a>
+
+6) Com as configurações de usuário realizadas, agora vamos fazer o teste de conexão à Internet. Abriremos o Prompt de Comando, digitando CMD na Barra de Tarefas. Caso esses testes derem êxito, nossa máquina "Client1" estará pronta.
+
+   - Digite <i>ipconfig</i> esse comando apresentará as configurações de conexão à Internet.
+   - Digite <i>whoami</i> para certificar o seu nome de usuário local.
+   - Digite <i>ping www.google.com</i> para verificar se o site google.com foi resolvido. Isso significa que nosso servidor DNS está funcionando perfeitamente.
+  
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/0jTj4tWg/client1-3.jpg' border='0' alt='client1-3'/></a>
+
+<b> Conferindo no Active Directory e Considerações Finais</b>
+
+1) Agora vamos conferir lá na máquina "DomainControl" do Windows Server e iremos no Active Directory para certificarmos se "Client1" está incluso na lista.
+
+   - Iremos ao Gerenciador de Servidor e abriremos o servidor DHCP
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/V6MTyw8L/ws2019-16.jpg' border='0' alt='ws2019-16'/></a>
+
+   - Expanda dc.mydomain.com, IPv4, Escopo e clique em Concessões de Endereço para ver 1 concessão do nosso computador "Client1".
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/26RmMmt2/ws2019-17.jpg' border='0' alt='ws2019-17'/></a>
+
+   - Nosso próximo passo é ir até ao Active Directory Usuários e Computadores. Expanda mydomain.com, Computadores. Note que nossa máquina "Client1" está habilitada.
+
+   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/6q4TswL3/ws2019-18.jpg' border='0' alt='ws2019-18'/></a>
+
+E chegamos ao fim do nosso laboratório Active Directory, conforme a imagem abaixo, na pasta _USERS do Active Directory tem uma gama de usuários disponíveis das quais podemos elaborar e organizar políticas de segurança e outras funções do Active Directory, espero que aproveite bastante essa experiência!
+
+  <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/MKrW1XRj/ws2019-19.jpg' border='0' alt='ws2019-19'/></a>
+
    
 
 
